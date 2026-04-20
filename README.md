@@ -8,8 +8,8 @@ This project performs Exploratory Data Analysis (EDA) on IPL (Indian Premier Lea
 ## 📂 Dataset
 - **Source:** [Kaggle - IPL Complete Dataset](https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020)
 - **Files Used:**
-  - `matches.csv` — Match-level data (1090 matches)
-  - `deliveries.csv` — Ball-by-ball data (172,943 deliveries)
+  - `matches.csv` — Match-level data (1090 matches) - [matches.csv](https://drive.google.com/file/d/1NJZT9CvvsD4WYWQ7dpCmOovXy5o7U-_W/view?usp=drive_link)
+  - `deliveries.csv` — Ball-by-ball data (172,943 deliveries) - [deliveries.csv](https://drive.google.com/file/d/1lbdRThloPQZKcDoyjRrg-4mkZtv8e-tK/view?usp=drive_link)
 
 ---
 
