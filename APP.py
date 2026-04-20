@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import gdown
+import os
 
 
 st.set_page_config(page_title="IPL Data Analysis", page_icon="🏏", layout="wide")
@@ -13,14 +15,16 @@ st.markdown("---")
 
 @st.cache_data
 def load_data():
-    deliveries_id = "1lbdRThloPQZKcDoyjRrg-4mkZtv8e-tK"
-    matches_id = "1NJZT9CvvsD4WYWQ7dpCmOovXy5o7U-_W"
 
-    deliveries_url = f"https://drive.google.com/uc?export=download&id={deliveries_id}"
-    matches_url = f"https://drive.google.com/uc?export=download&id={matches_id}"
+    if not os.path.exists('matches.csv'):
+        gdown.download(id="1NJZT9CvvsD4WYWQ7dpCmOovXy5o7U-_W", output="matches.csv", quiet=False)
 
-    matches = pd.read_csv(matches_url)
-    deliveries = pd.read_csv(deliveries_url)
+    if not os.path.exists('deliveries.csv'):
+        gdown.download(id="1lbdRThloPQZKcDoyjRrg-4mkZtv8e-tK", output="deliveries.csv", quiet=False)
+
+    matches = pd.read_csv('matches.csv')
+    deliveries = pd.read_csv('deliveries.csv')
+
 
     matches = matches.dropna(subset=['winner'])
     matches['city'] = matches['city'].fillna('Unknown')
