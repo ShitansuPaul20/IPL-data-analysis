@@ -13,9 +13,15 @@ st.markdown("---")
 
 @st.cache_data
 def load_data():
-    matches = pd.read_csv('matches.csv')
-    deliveries = pd.read_csv('deliveries.csv')
-    # Data Cleaning
+    deliveries_id = "1lbdRThloPQZKcDoyjRrg-4mkZtv8e-tK"
+    matches_id = "1NJZT9CvvsD4WYWQ7dpCmOovXy5o7U-_W"
+
+    deliveries_url = f"https://drive.google.com/uc?export=download&id={deliveries_id}"
+    matches_url = f"https://drive.google.com/uc?export=download&id={matches_id}"
+
+    matches = pd.read_csv(matches_url)
+    deliveries = pd.read_csv(deliveries_url)
+
     matches = matches.dropna(subset=['winner'])
     matches['city'] = matches['city'].fillna('Unknown')
     matches['player_of_match'] = matches['player_of_match'].fillna('Unknown')
