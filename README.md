@@ -65,5 +65,5 @@ IPL-Data-Analysis/
 ---
 
 ## 👤 Author
-- **Name:** Your Name
+- **Name:** Shitansu Paul
 - **Date:** April 2026
